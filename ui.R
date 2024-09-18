@@ -3,7 +3,7 @@ fluidPage(
 
   # App title ----
   headerPanel(
-    "Mohr circle"
+    "Mohr Circle"
   ),
 
   # Sidebar layout with input and output definitions ----
@@ -77,5 +77,7 @@ fluidPage(
       # Output: Interactive map ----
       plotOutput(outputId = "mohr", height = "600px")
     )
-  )
+  ),
+  h4("Tobias Stephan (2024)",
+     style = "position: absolute; bottom: 0;right:0;")
 )
