@@ -86,7 +86,7 @@ fluidPage(
           label = "Sliding criteria",
           min = 0,
           max = 2,
-          value = .81,
+          value = .85,
           round = FALSE,
           step = 0.01
         )

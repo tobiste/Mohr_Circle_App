@@ -188,18 +188,6 @@ function(input, output) {
         pf_circle13.m <- sigma_mean_pf
 
 
-
-        if (!is.null(coulomb)) {
-          theta.f <- theta(coulomb[2]) # (90 + tectonicr:::atand(coulomb[2]))/2
-        } else {
-          theta.f <- 0
-        }
-
-        sigma_s <- shear_stress(s1_pf, s3_pf, theta.f / 2)
-        sigma_n <- normal_stress(s1_pf, s3_pf, theta.f / 2)
-
-
-
         ggplot2::ggplot() +
           ggforce::geom_circle(aes(x0 = sm, y0 = 0, r = circle13.r), fill = "grey", alpha = .5, color = NA) +
           ggforce::geom_circle(aes(x0 = sigma_mean_pf, y0 = 0, r = circle13.r), fill = "slategrey", alpha = .5) +
