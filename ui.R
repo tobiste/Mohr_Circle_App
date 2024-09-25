@@ -33,12 +33,33 @@ fluidPage(
         max = 1200,
         value = 250
       ),
-      sliderInput(
-        inputId = "pf",
-        label = "Pore fluid pressure (MPa)",
-        min = 0,
-        max = 1200,
-        value = 0
+      fluidRow(
+        h4("Mean and differential stress"),
+        checkboxInput(inputId = "useSM", label = "Use mean and differential stress?", value = FALSE),
+        sliderInput(
+          inputId = "SM",
+          label = "Mean stress (MPa)",
+          min = -100,
+          max = 1200,
+          value = 638
+        ),
+        sliderInput(
+          inputId = "SD",
+          label = "Differential stress (MPa)",
+          min = 0,
+          max = 1200,
+          value = 775
+        ),
+      ),
+      fluidRow(
+        h4("Pore fluid pressure"),
+        sliderInput(
+          inputId = "pf",
+          label = "Pore fluid pressure (MPa)",
+          min = 0,
+          max = 1200,
+          value = 0
+        )
       ),
       fluidRow(
         h4("Coulomb criteria"),
@@ -53,7 +74,7 @@ fluidPage(
         ),
         sliderInput(
           inputId = "coulomb2",
-          label = "Slope",
+          label = "Coefficient of sliding friction",
           min = 0,
           max = 2,
           value = .6,
@@ -69,6 +90,23 @@ fluidPage(
           round = FALSE,
           step = 0.01
         )
+      ),
+      fluidRow(
+        h4("Input range"),
+        sliderInput(
+          inputId = "x_range",
+          label = "Normal stress",
+          min = -100,
+          max = 1300,
+          value = c(-100, 1300)
+        ),
+        sliderInput(
+          inputId = "y_range",
+          label = "Shear stress",
+          min = -750,
+          max = 750,
+          value = c(0, 500)
+        )
       )
     ),
 
@@ -79,5 +117,6 @@ fluidPage(
     )
   ),
   h4("Tobias Stephan (2024)",
-     style = "position: absolute; bottom: 0;right:0;")
+    style = "position: absolute; bottom: 0;right:0;"
+  )
 )
