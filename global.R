@@ -103,11 +103,11 @@ ggMohr <- function(s1, s2, s3, coulomb = c(70, 0.6), sliding = 0.81, units = "MP
     ggplot2::geom_text(aes(x = s1, y = 0), label = expression(sigma[1]), vjust = -.5, hjust = -1) +
     ggplot2::coord_fixed() +
     ggplot2::labs(
-      x = bquote(sigma[n] ~ (.(units))),
-      y = bquote(sigma[s] ~ (.(units))),
+      x = bquote("Normal stress" ~ sigma[n] ~ (.(units))),
+      y = bquote("Shear stress" ~ sigma[s] ~ (.(units))),
       caption = bquote(
-        theta["f"] == .(round(theta.f, 2)) ~ "|"
-        ~ alpha["f"] == .(round(90 - theta.f, 2)) ~ "|"
+        theta["f"] == .(round(theta.f, 2)) * degree ~ "|"
+        ~ alpha["f"] == .(round(90 - theta.f, 2)) * degree ~ "|"
         ~ "T"["s"] == .(round(ts, 1)) ~ "|"
         ~ "T"["d"] == .(round(td, 1))
       )
@@ -155,11 +155,11 @@ ggMohr2 <- function(sigma_mean, sigma_diff, coulomb = c(70, 0.6), sliding = 0.81
     ggplot2::geom_text(aes(x = s1, y = 0), label = expression(sigma[1]), vjust = -.5, hjust = -1) +
     ggplot2::coord_fixed() +
     ggplot2::labs(
-      x = bquote(sigma[n] ~ (.(units))),
-      y = bquote(sigma[s] ~ (.(units))),
+      x = bquote("Normal stress" ~ sigma[n] ~ (.(units))),
+      y = bquote("Shear stress" ~ sigma[s] ~ (.(units))),
       caption = bquote(
-        theta["f"] == .(round(theta.f, 2)) ~ "|"
-        ~ alpha["f"] == .(round(90 - theta.f, 2)) ~ "|"
+        theta["f"] == .(round(theta.f, 2)) * degree ~ "|"
+        ~ alpha["f"] == .(round(90 - theta.f, 2)) * degree ~ "|"
         ~ "T"["s"] == .(round(ts, 1)) ~ "|"
         ~ "T"["d"] == .(round(td, 1))
       )

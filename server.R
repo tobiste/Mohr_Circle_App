@@ -146,11 +146,11 @@ function(input, output) {
           ggplot2::geom_text(aes(x = s1_pf, y = 0), label = expression(sigma[1]), vjust = -.5, hjust = -1) +
           ggplot2::coord_fixed(xlim = xr, ylim = yr) +
           ggplot2::labs(
-            x = bquote(sigma[n] ~ (.(units))),
-            y = bquote(sigma[s] ~ (.(units))),
+            x = bquote("Normal stress" ~ sigma[n] ~ (.(units))),
+            y = bquote("Shear stress" ~ sigma[s] ~ (.(units))),
             caption = bquote(
-              theta["f"] == .(round(theta.f, 2)) ~ "|"
-              ~ alpha["f"] == .(round(90 - theta.f, 2)) ~ "|"
+              theta["f"] == .(round(theta.f, 2)) * degree ~ "|"
+              ~ alpha["f"] == .(round(90 - theta.f, 2)) * degree ~ "|"
               ~ "T"["s"] == .(round(ts, 1)) ~ "|"
               ~ "T"["d"] == .(round(td, 1))
             )
@@ -203,11 +203,11 @@ function(input, output) {
           ggplot2::geom_text(aes(x = s1_pf, y = 0), label = expression(sigma[1]), vjust = -.5, hjust = -1) +
           ggplot2::coord_fixed() +
           ggplot2::labs(
-            x = bquote(sigma[n] ~ (.(units))),
-            y = bquote(sigma[s] ~ (.(units))),
+            x = bquote("Normal stress" ~ sigma[n] ~ (.(units))),
+            y = bquote("Shear stress" ~ sigma[s] ~ (.(units))),
             caption = bquote(
-              theta["f"] == .(round(theta.f, 2)) ~ "|"
-              ~ alpha["f"] == .(round(90 - theta.f, 2)) ~ "|"
+              theta["f"] == .(round(theta.f, 2)) * degree ~ "|"
+              ~ alpha["f"] == .(round(90 - theta.f, 2)) * degree ~ "|"
               ~ "T"["s"] == .(round(ts, 1)) ~ "|"
               ~ "T"["d"] == .(round(td, 1))
             )

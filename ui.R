@@ -11,27 +11,29 @@ fluidPage(
 
     # Sidebar panel for inputs ----
     sidebarPanel(
-      h4("Stress magnitudes"),
-      sliderInput(
-        inputId = "S1",
-        label = "Sigma 1 (MPa)",
-        min = -100,
-        max = 1200,
-        value = 1025
-      ),
-      sliderInput(
-        inputId = "S2",
-        label = "Sigma 2 (MPa)",
-        min = -100,
-        max = 1200,
-        value = 400
-      ),
-      sliderInput(
-        inputId = "S3",
-        label = "Sigma 3 (MPa)",
-        min = -100,
-        max = 1200,
-        value = 250
+      fluidRow(
+        h4("Stress magnitudes"),
+        sliderInput(
+          inputId = "S1",
+          label = "Sigma 1 (MPa)",
+          min = -100,
+          max = 1200,
+          value = 1025
+        ),
+        sliderInput(
+          inputId = "S2",
+          label = "Sigma 2 (MPa)",
+          min = -100,
+          max = 1200,
+          value = 400
+        ),
+        sliderInput(
+          inputId = "S3",
+          label = "Sigma 3 (MPa)",
+          min = -100,
+          max = 1200,
+          value = 250
+        )
       ),
       fluidRow(
         h4("Mean and differential stress"),
@@ -62,10 +64,10 @@ fluidPage(
         )
       ),
       fluidRow(
-        h4("Coulomb criteria"),
+        h4("Coulomb criterion"),
         sliderInput(
           inputId = "coulomb1",
-          label = "Cohesion",
+          label = "Cohesion (MPa)",
           min = -500,
           max = 500,
           value = 70,
@@ -74,16 +76,17 @@ fluidPage(
         ),
         sliderInput(
           inputId = "coulomb2",
-          label = "Coefficient of sliding friction",
+          label = "Coefficient of internal friction",
           min = 0,
           max = 2,
           value = .6,
           round = FALSE,
           step = 0.01
         ),
+        h4("Criterion for frictional sliding"),
         sliderInput(
           inputId = "sliding",
-          label = "Sliding criteria",
+          label = "Coefficient of internal friction",
           min = 0,
           max = 2,
           value = .85,
@@ -95,14 +98,14 @@ fluidPage(
         h4("Input range"),
         sliderInput(
           inputId = "x_range",
-          label = "Normal stress",
+          label = "Normal stress (MPa)",
           min = -100,
           max = 1300,
           value = c(-100, 1300)
         ),
         sliderInput(
           inputId = "y_range",
-          label = "Shear stress",
+          label = "Shear stress (MPa)",
           min = -750,
           max = 750,
           value = c(0, 500)
