@@ -37,7 +37,7 @@ fluidPage(
       ),
       fluidRow(
         h4("Mean and differential stress"),
-        checkboxInput(inputId = "useSM", label = "Use mean and differential stress?", value = FALSE),
+        checkboxInput(inputId = "useSM", label = "Define mean and differential stress instead of Sigma 1, 2, and 3?", value = FALSE),
         sliderInput(
           inputId = "SM",
           label = "Mean stress (MPa)",

@@ -149,10 +149,10 @@ function(input, output) {
             x = bquote("Normal stress" ~ sigma[n] ~ (.(units))),
             y = bquote("Shear stress" ~ sigma[s] ~ (.(units))),
             caption = bquote(
-              theta["f"] == .(round(theta.f, 2)) * degree ~ "|"
+              "Angle of failure" ~ theta["f"] == .(round(theta.f, 2)) * degree ~ "|"
               ~ alpha["f"] == .(round(90 - theta.f, 2)) * degree ~ "|"
-              ~ "T"["s"] == .(round(ts, 1)) ~ "|"
-              ~ "T"["d"] == .(round(td, 1))
+              ~ "Slip tendency" ~ "T"["s"] == .(round(ts, 1)) ~ "|"
+              ~ "Dilatation tendency" ~ "T"["d"] == .(round(td, 1))
             )
           ) +
           ggplot2::theme_classic()
@@ -206,10 +206,10 @@ function(input, output) {
             x = bquote("Normal stress" ~ sigma[n] ~ (.(units))),
             y = bquote("Shear stress" ~ sigma[s] ~ (.(units))),
             caption = bquote(
-              theta["f"] == .(round(theta.f, 2)) * degree ~ "|"
+              "Angle of failure" ~ theta["f"] == .(round(theta.f, 2)) * degree ~ "|"
               ~ alpha["f"] == .(round(90 - theta.f, 2)) * degree ~ "|"
-              ~ "T"["s"] == .(round(ts, 1)) ~ "|"
-              ~ "T"["d"] == .(round(td, 1))
+              ~ "Slip tendency" ~ "T"["s"] == .(round(ts, 1)) ~ "|"
+              ~ "Dilatation tendency" ~ "T"["d"] == .(round(td, 1))
             )
           ) +
           ggplot2::theme_classic() +
